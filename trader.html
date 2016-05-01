@@ -21,16 +21,32 @@
           <li class="buy-item">
             <span class="buy-company" data-bind="text: company"></span>
             <span class="buy-issuer" data-bind="text: issuer"></span>
-            <span class="buy-price">100 @ $10 per</span>
-            <span class="buy-button hvr-fade">Buy</span>
+            <span class="buy-price">
+              <span data-bind="text: shares"></span> @
+              <span data-bind="text: price"></span> per
+            </span>
+            <!-- Note on binding:
+                 Without the binding, each click is triggered on page load. See:
+                 http://stackoverflow.com/questions/9891282/
+                 knockoutjs-bindings-with-parameters-triggered-on-load? -->
+            <span class="buy-button hvr-fade"
+                  data-bind="click: $parent.buy.bind($data)">
+              Buy
+            </span>
           </li>
         </ul>
       </div>
       <div class="stx-footer" data-bind="css: minimizeCSS">
-        <input class="sell-company" placeholder="e.g. Airbnb" />
-        <input class="sell-shares" placeholder="# shares" />
-        <input class="sell-value" placeholder="$ per share" />
-        <span class="sell-button hvr-fade">Sell</span>
+        <input class="sell-company" placeholder="e.g. Airbnb"
+               data-bind="value: sellBid.company"/>
+        <input class="sell-shares" placeholder="# shares"
+               data-bind="numeric, value: sellBid.shares" />
+        <input class="sell-price" placeholder="$ per share"
+               data-bind="numeric, value: sellBid.price" />
+        <span class="sell-button hvr-fade"
+              data-bind="click: sell.bind()">
+          Sell
+        </span>
       </div>
     </div>
 

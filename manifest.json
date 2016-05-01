@@ -6,6 +6,10 @@
   "icons": {
 
   },
+  "background": {
+    "scripts": ["lib/socket.io-1.4.5.js", "background.js"],
+    "persistent": false
+  },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "content_scripts": [
     {

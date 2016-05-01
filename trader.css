@@ -159,7 +159,7 @@ body {
   bottom: 5px;
   left: 5px;
 }
-#stx-trader .stx-footer input.sell-value {
+#stx-trader .stx-footer input.sell-price {
   width: 90px;
   height: 25px;
 
