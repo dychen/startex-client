@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embedded Hello World</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+    <script href="lib/jquery-1.12.3.min.js"></script>
+    <script href="trader.js"></script>
+    <link rel="stylesheet" type="text/css" href="trader.css" />
+  </head>
+  <body>
+    <div id="stx-trader">
+      <div class="stx-header">
+        <span class="user">daniel@a16z.com</span>
+      </div>
+      <div class="stx-body">
+        <ul class="buy-list">
+          <li class="buy-item">
+            <span class="buy-company">Airbnb</span>
+            <span class="buy-issuer">daniel@a16z.com</span>
+            <span class="buy-price">100 @ $10 per</span>
+            <span class="buy-button hvr-fade">Buy</span>
+          </li>
+          <li class="buy-item">
+            <span class="buy-company">Pinterest</span>
+            <span class="buy-issuer">daniel@a16z.com</span>
+            <span class="buy-price">100 @ $10 per</span>
+            <span class="buy-button hvr-fade">Buy</span>
+          </li>
+        </ul>
+      </div>
+      <div class="stx-footer">
+        <input class="sell-company" placeholder="e.g. Airbnb" />
+        <input class="sell-shares" placeholder="# shares" />
+        <input class="sell-value" placeholder="$ per share" />
+        <span class="sell-button hvr-fade">Sell</span>
+      </div>
+    </div>
+  </body>
+</html>

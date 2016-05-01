@@ -1,0 +1,15 @@
+#startex-widget-inject {
+  z-index: 99999;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 400px;
+  border: 0px;
+  margin: 0;
+  padding: 0;
+  -moz-box-shadow: 0 0 1px 0px #888;
+  -webkit-box-shadow: 0 0 1px 0px#888;
+  box-shadow: 0 0 1px 0px #888;
+}
+
