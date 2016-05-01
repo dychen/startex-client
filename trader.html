@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Embedded Hello World</title>
+    <title>Trader</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
-    <script href="lib/jquery-1.12.3.min.js"></script>
-    <script href="trader.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" />
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="trader.css" />
   </head>
   <body>
+
     <div id="stx-trader">
-      <div class="stx-header">
+      <div class="stx-header" data-bind="click: toggleMinimize">
         <span class="user">daniel@a16z.com</span>
+        <span class="minimize fa fa-minus fa-2x"></span>
       </div>
-      <div class="stx-body">
-        <ul class="buy-list">
+      <div class="stx-body" data-bind="css: minimizeCSS">
+        <ul class="buy-list" data-bind="foreach: bids">
           <li class="buy-item">
-            <span class="buy-company">Airbnb</span>
-            <span class="buy-issuer">daniel@a16z.com</span>
-            <span class="buy-price">100 @ $10 per</span>
-            <span class="buy-button hvr-fade">Buy</span>
-          </li>
-          <li class="buy-item">
-            <span class="buy-company">Pinterest</span>
-            <span class="buy-issuer">daniel@a16z.com</span>
+            <span class="buy-company" data-bind="text: company"></span>
+            <span class="buy-issuer" data-bind="text: issuer"></span>
             <span class="buy-price">100 @ $10 per</span>
             <span class="buy-button hvr-fade">Buy</span>
           </li>
         </ul>
       </div>
-      <div class="stx-footer">
+      <div class="stx-footer" data-bind="css: minimizeCSS">
         <input class="sell-company" placeholder="e.g. Airbnb" />
         <input class="sell-shares" placeholder="# shares" />
         <input class="sell-value" placeholder="$ per share" />
         <span class="sell-button hvr-fade">Sell</span>
       </div>
     </div>
+
+    <script src="lib/jquery-1.12.3.min.js"></script>
+    <script src="lib/knockout-3.4.0.min.js"></script>
+    <script src="trader.js"></script>
   </body>
 </html>
